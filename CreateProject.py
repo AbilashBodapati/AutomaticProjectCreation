@@ -8,8 +8,8 @@
 # Import all the libraries I need
 import os
 import sys
+import time
 from pathlib import Path
-##import CreateGitRepo
 
 
 
@@ -63,7 +63,23 @@ def createProject(argv):
     os.system("git init")
     os.system("git add *")
     os.system("git commit -m \"First Commit.\"")
-    
+
+    # Run a Separate python script to create a git repo on github
+    os.system("python3 ../PrivateFiles/CreateGitRepo.py %s" %(argv[0]))
+
+    # Set remote url to origin
+    os.system("git remote set-url origin https://AbilashBodapati@github.com/AbilashBodapati/%s.git" %(argv[0]))
+
+    # Push the commit to the repo
+    os.system("git push -u origin master")
+
+    # Type out the password
+    os.system(argv[3])
+
+    # Open the project tree in vscode
+    os.system("code .")
+
+
 
 # Main Function
 if __name__ == "__main__":
