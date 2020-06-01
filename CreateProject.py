@@ -70,6 +70,7 @@ def createProject(argv):
     os.system("git remote add origin https://AbilashBodapati@github.com/AbilashBodapati/%s.git" %(argv[0]))
 
     # Push the commit to the repo
+    # Credentials stored
     os.system("git push -u origin master")
 
     # Open the project tree in vscode
