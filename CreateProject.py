@@ -14,6 +14,11 @@ import os
 import sys
 import time
 from pathlib import Path
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+
+import CreateGitRepo as cgr
+
 
 
 # A class to hold all the functions for 3 main steps
@@ -24,11 +29,15 @@ class NewProject:
         """
             arg[0] => RootFolder in the Project folder
             arg[1] => Filename of the Project
-            arg[2] => File Extension (py or java)        
+            arg[2] => File Extension (py or java)
+            arg[3] => Username
+            arg[4] => Password        
         """
         self.parent_folder_name = argv[0]
         self.file_name = argv[1]
         self.file_ext = argv[2]
+        self.username = argv[3]
+        self.password = argv[4]
 
     # Function to create a new Directory to creat a new project
     def createNewDirectory(self):
@@ -83,7 +92,12 @@ class NewProject:
         os.system("git commit -m \"First Commit.\"")
 
         # Run a Separate python script to create a git repo on github
-        os.system("python3 ../PrivateFiles/CreateGitRepo.py %s" %(self.parent_folder_name))
+        #os.system("python3 ../PrivateFiles/CreateGitRepo.py %s" %(self.parent_folder_name))
+        cgr.construct(self, self.parent_folder_name, self.username, self.password)
+        cgr.startChromeService(self)
+        cgr.accessGithub(self)
+        cgr.createRepo(self)
+
 
         # Add remote url to origin
         github_path = "https://AbilashBodapati@github.com/AbilashBodapati"
