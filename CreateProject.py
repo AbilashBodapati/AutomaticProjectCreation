@@ -59,6 +59,10 @@ def createProject(argv):
         print("File Already Exists")
         sys.exit()
 
+    # Perform the Git actions
+    os.system("git init")
+    os.system("git add *")
+    os.system("git commit -m \"First Commit.\"")
     
 
 # Main Function
