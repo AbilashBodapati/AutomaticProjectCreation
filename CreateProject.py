@@ -12,6 +12,11 @@ import time
 from pathlib import Path
 
 
+def githubPassword(argv):
+    pass
+
+
+
 
 # Function to create the project
 def createProject(argv):
@@ -67,6 +72,9 @@ def createProject(argv):
     # Run a Separate python script to create a git repo on github
     os.system("python3 ../PrivateFiles/CreateGitRepo.py %s" %(argv[0]))
 
+    # Clear the remote url
+    os.system("git remote remove origin")
+
     # Set remote url to origin
     os.system("git remote set-url origin https://AbilashBodapati@github.com/AbilashBodapati/%s.git" %(argv[0]))
 
@@ -75,6 +83,9 @@ def createProject(argv):
 
     # Type out the password
     os.system(argv[3])
+
+    # Call the git push origin command
+    githubPassword(argv[3])
 
     # Open the project tree in vscode
     os.system("code .")
