@@ -37,4 +37,4 @@ Final terminal command will be:
 Global Environment variables
 git config --global credential.helper store
 	USERNAME = ""
-	PASSWORD = ""
+	PASSWORD = "" 
