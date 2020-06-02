@@ -77,8 +77,11 @@ class NewProject:
         try:
             os.system("touch %s.%s" %(self.file_name, self.file_ext))
             if self.file_ext == 'java' or self.file_ext == 'Java':
+                os.system("cp ../PrivateFiles/Template.java %s.java" %(self.file_name))
+                os.system("cp ../PrivateFiles/TemplateClass.java %sClass.java" %(self.file_name))
                 print('Created a Java file')
             elif self.file_ext == 'py' or self.file_ext == 'Py':
+                os.system("touch %s.%s" %(self.file_name, self.file_ext))
                 print('Created a Python file')
         except OSError:
             print("File Already Exists")
