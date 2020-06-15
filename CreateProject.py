@@ -82,11 +82,11 @@ class NewProject:
                 os.system("cp ../PrivateFiles/TemplateClass.java %sClass.java" %(self.file_name))
                 print('Created a Java file')
             # Python Project (Script or DataScience Notebook)
-            elif self.file_ext == 'py' or self.file_ext == 'Py' or self.file_ext == 'ipynb':
+            elif self.file_ext == 'py' or self.file_ext == 'Py':
                 os.system("touch %s.%s" %(self.file_name, self.file_ext))
                 print('Created a Python file')
             elif self.file_ext == 'ipynb':
-                os.system("touch %s.%s" %(self.file_name, self.file_ext))
+                os.system("cp ../PrivateFiles/datascienceTemplate.ipynb %s.ipynb" %(self.file_name))
                 print('Created a Python Notebook file')
         except OSError:
             print("File Already Exists")
