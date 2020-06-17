@@ -31,13 +31,15 @@ class NewProject:
             arg[1] => Filename of the Project
             arg[2] => File Extension (py or ipynb or java)
             arg[3] => Username
-            arg[4] => Password        
+            arg[4] => Password
+            arg[5] => URL        
         """
         self.parent_folder_name = argv[0]
         self.file_name = argv[1]
         self.file_ext = argv[2]
         self.username = argv[3]
         self.password = argv[4]
+        self.url = argv[5]
 
     # Function to create a new Directory to creat a new project
     def createNewDirectory(self):
@@ -107,6 +109,9 @@ class NewProject:
                 print("==============Datasets FOLDER CREATED==============", end='\n')
                 time.sleep(1.75)
                 ## TO-DO -- Be able to go on kaggle and download the datasets.
+                # Call the Script to download and move the files from download to the Datasets Folder
+
+
                 print("")
                 print('==============CREATED A DATASCIENCE PROJECT==============', end='\n')
                 time.sleep(1.75)
