@@ -1,3 +1,13 @@
+'''
+    File Name: CreateGitRepo.py
+    Author: Abilash Bodapati
+    Version: 20200617
+    Description: 
+        This is a Python class that uses selenium webdriver to
+        interact with github and create a new repository for my
+        code to be pushed into as an initial commit.  
+'''
+
 # Import the packages to interact with the chrome browser
 import time
 import sys
