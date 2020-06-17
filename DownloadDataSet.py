@@ -7,5 +7,6 @@
         dataset only from Kaggle and moves the
         unziped files from the download folder to
         the Datasets Folder in the new datascience
-        juypter notebook project
+        juypter notebook project.
 '''
+
