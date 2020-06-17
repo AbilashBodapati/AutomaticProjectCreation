@@ -1,3 +1,13 @@
+'''
+    File Name: RemoveGitRepo.py
+    Author: Abilash Bodapati
+    Version: 20200617
+    Description: 
+        This is a Python class that uses selenium webdriver to
+        interact with github and remove a repository and its
+        dependency files.  
+'''
+
 # Import the packages to interact with the chrome browser
 import time
 import sys
