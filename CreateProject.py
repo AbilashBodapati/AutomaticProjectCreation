@@ -17,7 +17,9 @@ from pathlib import Path
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
+# Import Custom classes
 from CreateGitRepo import CreateGitRepo
+from DownloadDataSet import DownloadDataSet
 
 
 
@@ -110,7 +112,13 @@ class NewProject:
                 time.sleep(1.75)
                 ## TO-DO -- Be able to go on kaggle and download the datasets.
                 # Call the Script to download and move the files from download to the Datasets Folder
-
+                download = DownloadDataSet()
+                download.construct()
+                download.startChromeService(self.url)
+                download.downloadData()
+                download.moveDataToFolder()
+                print("")
+                print('==============DATASETS READY==============', end='\n')
 
                 print("")
                 print('==============CREATED A DATASCIENCE PROJECT==============', end='\n')

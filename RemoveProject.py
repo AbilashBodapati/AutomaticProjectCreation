@@ -65,7 +65,7 @@ class RemoveProject:
         time.sleep(1.75)
         print("==============DELETED THE PROJECT FROM YOUR GITHUB==============", end='\n\n')
         time.sleep(1.75)
-        print("In the meanwhile, I hope you get new and innvoative ideas for a new project.")
+        print("In the meanwhile, I hope you get new and innovative ideas for a new project.")
         time.sleep(1.5)
 
 

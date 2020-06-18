@@ -39,18 +39,28 @@ class DownloadDataSet:
         # Maximize the window when the webpage is opened
         self.driver.maximize_window()
 
-    def DownloadData(self):
+    def downloadData(self):
         # By now we are in the webpage for dataset
 
         # Click on the Download button
-        self.driver.find_elements_by_xpath("/html/body/main/div[1]/div/div[5]/div[2]/div[1]/div/div/div[2]/div[2]/div[1]/div[2]/a[1]/div/span").click()
+        self.driver.find_element_by_xpath("/html/body/main/div[1]/div/div[5]/div[2]/div[1]/div/div/div[2]/div[2]/div[1]/div[2]/a[1]/div/span").click()
+        time.sleep(4)
+
         # Click on the Signin button
-        self.driver.find_elements_by_xpath("/html/body/main/div[1]/div[1]/div/form/div[2]/div/div[1]/a/li").click()
-        self.driver.find_elements_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div/div/ul/li[1]/div/div[1]/div/div[2]/div[1]").click()
+        self.driver.find_element_by_xpath("/html/body/main/div[1]/div[1]/div/form/div[2]/div/div[1]/a/li").click()
+        time.sleep(5)
+        self.driver.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input").send_keys('bodapatiabilash98@gmail.com')
+        time.sleep(20)
+        self.driver.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/span/span").click()
+        time.sleep(35)
+
+        
 
         # Click on the Download button again after signed in
-        self.driver.find_elements_by_xpath("/html/body/main/div[1]/div/div[5]/div[2]/div[1]/div/div/div[2]/div[2]/div[1]/div[2]/a[1]/div/span").click()
+        self.driver.find_element_by_xpath("/html/body/main/div[1]/div/div[5]/div[2]/div[1]/div/div/div[2]/div[2]/div[1]/div[2]/a[1]/div/span").click()
+        time.sleep(1.75)
 
-    def MoveDataToFolder(self):
+    def moveDataToFolder(self):
+        # Unzip the folder from Downloads to Datasets folder.
         os.system('unzip -q /home/abilashbodapati/Downloads/*_bundle_archive.zip -d ./Datasets')
 
