@@ -1,4 +1,4 @@
-# Create Project 
+# Automatic Project Creation 
 ## Shell script that controls the execution of all files for Creating
 First step is to open the terminal on the desktop.
 Then change directory into Projects folder.
